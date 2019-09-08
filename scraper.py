@@ -60,7 +60,6 @@ def scrape_recursively(start=1, data='', last_fail=False):
         try:
             song_title = wb.get_text_by_x_path('//*[@id="listAlbum"]/a[{}]'.format(a))
             wb.xpath_click('//*[@id="listAlbum"]/a[{}]'.format(a))
-            time.sleep(10)
             wb.driver.switch_to.window(wb.driver.window_handles[1])
             lyrics = wb.get_text_by_x_path('/html/body/div[3]/div/div[2]/div[5]')
             wb.driver.close()
